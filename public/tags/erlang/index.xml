@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Erlang on Adaman blog</title>
-    <link>https://adamanr.github.io/blog/tags/erlang/</link>
+    <link>http://localhost:1313/blog/tags/erlang/</link>
     <description>Recent content in Erlang on Adaman blog</description>
     <generator>Hugo</generator>
     <language>ru</language>
-    <lastBuildDate>Fri, 16 May 2025 21:10:02 +0500</lastBuildDate>
-    <atom:link href="https://adamanr.github.io/blog/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 16:10:49 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/blog/tags/erlang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>☎️ OTP (Open Telecom Platform): Что это такое и почему это </title>
-      <link>https://adamanr.github.io/blog/post/2024-10-15_08-14-23_msg_60/</link>
+      <link>http://localhost:1313/blog/post/2024-10-15_08-14-23_msg_60/</link>
       <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://adamanr.github.io/blog/post/2024-10-15_08-14-23_msg_60/</guid>
+      <guid>http://localhost:1313/blog/post/2024-10-15_08-14-23_msg_60/</guid>
       <description>Обзор технологии OTP и её возможностей</description>
     </item>
     <item>
       <title>⭐ Gleam: Новая звезда в экосистеме Erlang</title>
-      <link>https://adamanr.github.io/blog/post/2024-08-31_18-57-33_msg_22/</link>
+      <link>http://localhost:1313/blog/post/2024-08-31_18-57-33_msg_22/</link>
       <pubDate>Sat, 31 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://adamanr.github.io/blog/post/2024-08-31_18-57-33_msg_22/</guid>
+      <guid>http://localhost:1313/blog/post/2024-08-31_18-57-33_msg_22/</guid>
       <description>Обзор языка программирования Gleam и его возможностей</description>
     </item>
     <item>
       <title>📞 Erlang: Язык, что прошёл мног</title>
-      <link>https://adamanr.github.io/blog/post/2024-08-28_10-15-00_msg_19/</link>
+      <link>http://localhost:1313/blog/post/2024-08-28_10-15-00_msg_19/</link>
       <pubDate>Wed, 28 Aug 2024 00:00:00 +0000</pubDate>
-      <guid>https://adamanr.github.io/blog/post/2024-08-28_10-15-00_msg_19/</guid>
+      <guid>http://localhost:1313/blog/post/2024-08-28_10-15-00_msg_19/</guid>
       <description>Обзор на язык программирования Erlang и его историю</description>
     </item>
   </channel>

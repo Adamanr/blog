@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://adamanr.github.io/blog/'
 languageCode = 'en-ru'
 title = 'Adaman blog'
 pygmentsCodeFences = true
