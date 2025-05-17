@@ -1,0 +1,28 @@
+name: Deploy Hugo Blog to GitHub Pages
+
+on:
+  push:
+    branches: ["main"] # Триггер на пуши в main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true # Важно для тем, добавленных как submodule
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest" # или конкретная версия, например '0.121.1'
+
+      - name: Build
+        run: hugo --minify # Собирает сайт в папку `public`
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Авторизация
+          publish_dir: ./public # Папка с собранным сайтом
+          publish_branch: gh-pages # Ветка для GitHub Pages
