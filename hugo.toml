@@ -17,7 +17,7 @@ rss = true
 lastmod = true
 favicon = "/blog/images/github-mark.png"
 avatar = "/blog/images/avatar.png"
-headerIcon = "/images/github-mark-white.png"
+headerIcon = "/blog/images/github-mark-white.png"
 location = "Russia"
 userStatusEmoji = "🤡"
 userEmojiDesc = "Цирк уехал, а клоун остался"
@@ -40,11 +40,11 @@ weight = 10
 [[params.links]]
 title = "Закулисье цирка"
 href = "https://t.me/behind_the_circus"
-icon = "/images/circus.png"
+icon = "/blog/images/circus.png"
 [[params.links]]
 title = "Мой телеграм"
 href = "https://t.me/Adamanq"
-icon = "/images/adaman.jpg"
+icon = "/blog/images/adaman.jpg"
 
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
