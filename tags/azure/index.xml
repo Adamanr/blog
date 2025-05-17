@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Azure on Adaman blog</title>
+    <link>http://localhost:1313/tags/azure/</link>
+    <description>Recent content in Azure on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 16 May 2025 22:20:38 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/azure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🎥 Elixir для ТВ-вещания: Как Elixir помогает Cyanview упра</title>
+      <link>http://localhost:1313/post/2025-04-01_09-48-29_msg_111/</link>
+      <pubDate>Tue, 01 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2025-04-01_09-48-29_msg_111/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+  </channel>
+</rss>

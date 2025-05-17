@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>Elixir for Machine Learning. Part 1 - Theory - Adaman blog</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/github-mark.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+    
+
+    
+    <meta name="description"
+  content="In recent times, the role of artificial intelligence in various fields has been gaining momentum. Many companies are already implementing AI to assist users on their portals, while others are developing their own neural networks to solve specialized tasks
+" />
+<meta name="keywords"
+  content='blog, google analytics' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/en/post/ml_for_elixir_1/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Elixir for Machine Learning. Part 1 - Theory - Adaman blog" />
+<meta name="twitter:description"
+  content="In recent times, the role of artificial intelligence in various fields has been gaining momentum. Many companies are already implementing AI to assist users on their portals, while others are developing their own neural networks to solve specialized tasks
+" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Elixir for Machine Learning. Part 1 - Theory - Adaman blog">
+<meta property="og:description"
+  content="In recent times, the role of artificial intelligence in various fields has been gaining momentum. Many companies are already implementing AI to assist users on their portals, while others are developing their own neural networks to solve specialized tasks
+" />
+<meta property="og:url" content="http://localhost:1313/en/post/ml_for_elixir_1/" />
+<meta property="og:site_name" content="Elixir for Machine Learning. Part 1 - Theory" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2025-04-02 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+    <header
+        class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"
+    >
+        <div
+            class="Header-item mobile-none"
+            style="margin-top: -4px; margin-bottom: -4px"
+        >
+            <a class="Header-link" href="http://localhost:1313/">
+                <img
+                    class="octicon"
+                    height="32"
+                    width="32"
+                    src="/images/github-mark-white.png"
+                />
+            </a>
+        </div>
+
+        
+        <div class="Header-item d-md-none">
+            <button
+                class="Header-link btn-link js-details-target"
+                type="button"
+                onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'"
+            >
+                <svg
+                    height="24"
+                    class="octicon octicon-three-bars"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="24"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+
+        
+        <div
+            class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"
+        >
+            <div
+                class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"
+            >
+                <div class="position-relative">
+                    
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="search-input"
+                            class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus"
+                            placeholder="Поиск..."
+                            autocomplete="off"
+                        />
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div
+            class="Header-item Header-item--full flex-justify-center d-md-none position-relative"
+        >
+            <a class="Header-link" href="http://localhost:1313/">
+                <img
+                    class="octicon octicon-mark-github v-align-middle"
+                    height="32"
+                    width="32"
+                    src="/images/github-mark-white.png"
+                />
+            </a>
+        </div>
+
+        
+        <div class="Header-item mr-3">
+            
+            <a class="Header-link" href="/ru">Русский</a>
+            <span class="px-1">|</span>
+            <a class="Header-link active" href="http://localhost:1313/">English</a>
+            
+        </div>
+
+        
+        <div class="Header-item" style="margin-right: 0">
+            <a
+                href="javascript:void(0)"
+                class="Header-link no-select"
+                onclick="switchTheme()"
+            >
+                <svg
+                    style="fill: var(--color-profile-color-modes-toggle-moon)"
+                    class="no-select"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    height="16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+</div>
+
+<style>
+     
+    .search-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .Header-search-input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        background-color: var(--color-header-bg);
+        color: var(--color-text-primary);
+    }
+
+    .Header-search-input:focus {
+        outline: none;
+        border-color: #0366d6;
+        box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    }
+
+    .search-results {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-primary);
+        border: 1px solid var(--color-border-primary);
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        z-index: 100;
+        max-height: 70vh;
+        overflow-y: auto;
+        margin-top: 5px;
+    }
+
+    .search-result-item {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--color-border-secondary);
+        transition: background 0.2s ease;
+    }
+
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+
+    .search-result-item:hover {
+        background-color: var(--color-bg-tertiary);
+    }
+
+    .search-result-item a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .search-result-item h4 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+        color: var(--color-text-primary);
+    }
+
+    .search-result-item p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .no-results {
+        padding: 12px 16px;
+        color: var(--color-text-secondary);
+        text-align: center;
+    }
+
+     
+    .highlight {
+        background-color: rgba(255, 212, 0, 0.4);
+        font-weight: bold;
+        padding: 0 1px;
+        border-radius: 2px;
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        
+        fetch("/index.json")
+            .then((response) => {
+                
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Search index loaded:", data.length, "items"); 
+
+                const options = {
+                    includeScore: true,
+                    keys: [
+                        { name: "title", weight: 0.7 },
+                        { name: "content", weight: 0.3 },
+                        { name: "tags", weight: 0.5 }
+                    ],
+                    threshold: 0.4,
+                    ignoreLocation: true,
+                    includeMatches: true,
+                    minMatchCharLength: 2
+                };
+
+                const fuse = new Fuse(data, options);
+
+                const searchInput = document.getElementById("search-input");
+                const searchResults = document.getElementById("search-results");
+
+                if (searchInput && searchResults) {
+                    searchInput.addEventListener("input", function (e) {
+                        const query = e.target.value.trim();
+
+                        
+                        if (query.length < 2) {
+                            searchResults.innerHTML = "";
+                            searchResults.style.display = "none";
+                            return;
+                        }
+
+                        try {
+                            const results = fuse.search(query);
+                            console.log("Found results:", results.length); 
+
+                            if (results.length > 0) {
+                                searchResults.innerHTML = results
+                                    .slice(0, 8)
+                                    .map((result) => {
+                                        
+                                        const escapeHtml = (text) => {
+                                            return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                                        };
+
+                                        const title = escapeHtml(result.item.title);
+                                        const description = result.item.description ? escapeHtml(result.item.description) : '';
+                                        const permalink = escapeHtml(result.item.permalink);
+
+                                        return `
+                                        <div class="search-result-item">
+                                            <a href="${permalink}">
+                                                <h4>${title}</h4>
+                                                ${description ? `<p>${description}</p>` : ''}
+                                            </a>
+                                        </div>
+                                        `;
+                                    })
+                                    .join("");
+                                searchResults.style.display = "block";
+                            } else {
+                                searchResults.innerHTML =
+                                    '<div class="no-results">Ничего не найдено. Попробуйте изменить запрос</div>';
+                                searchResults.style.display = "block";
+                            }
+                        } catch (error) {
+                            console.error("Search error:", error);
+                            searchResults.innerHTML =
+                                '<div class="no-results">Ошибка поиска</div>';
+                            searchResults.style.display = "block";
+                        }
+                    });
+
+                    
+                    document.addEventListener("click", function (e) {
+                        if (!searchContainer.contains(e.target)) {
+                            searchResults.style.display = "none";
+                        }
+                    });
+                } else {
+                    console.error("Search elements not found");
+                }
+            })
+            .catch((error) => {
+                console.error("Error loading search index:", error);
+                
+                const searchResults = document.getElementById("search-results");
+                if (searchResults) {
+                    searchResults.innerHTML =
+                        '<div class="no-results">Поиск временно недоступен</div>';
+                }
+            });
+        
+    });
+</script>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Artyom</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/en/post/ml_for_elixir_1/">Elixir for Machine Learning. Part 1 - Theory</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Wed, 02 Apr 2025 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Wed, 02 Apr 2025 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Thu, 15 May 2025 03:03:27 &#43;0500"
+                    class="no-wrap">
+                    Thu, 15 May 2025 03:03:27 &#43;0500</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      2532 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/machine-learning">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Machine Learning
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/article">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Article
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/elixir">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Elixir
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><p>In recent times, the role of artificial intelligence in various fields has been gaining momentum. Many companies are already implementing AI to assist users on their portals, while others are developing their own neural networks to solve specialized tasks</p>
+<p>While Python dominates the ML landscape, Elixir finds its niche in specific areas: real-time data processing systems (Bumblebee), model inference services (Nx.Serving), and distributed machine learning systems. Companies such as <strong><a href="https://dockyard.com">DockYard</a></strong> and <strong><a href="https://dashbit.co">Dashbit</a></strong> have successfully implemented ML solutions using Elixir in industrial environments</p>
+<p>This article is divided into two parts — Theory and Practice. In the first part, we will explore the basics of machine learning, familiarize ourselves with key concepts, and learn about libraries that help create neural networks using Elixir</p>
+<h2 id="what-are-machine-learning-and-neural-networks">What Are Machine Learning and Neural Networks?</h2>
+<p>Machine Learning (ML) is an approach to creating systems that can learn from data and improve performance over time without explicit programming. Instead of writing specific instructions to solve a task, we build models that adapt and &ldquo;learn&rdquo; based on experience.</p>
+<p>Neural networks are one of the most popular methods in machine learning, inspired by how the human brain works. They consist of interconnected nodes (neurons), organized into layers:</p>
+<ul>
+<li>The input layer receives raw data (e.g., image pixels)</li>
+<li>Hidden layers process information, identifying increasingly complex patterns</li>
+<li>The output layer provides the final result (e.g., object classification)</li>
+</ul>
+<p>Each neuron takes input signals, processes them by applying an activation function to the weighted sum of inputs, and passes the result along the network. Connections between neurons carry weight coefficients that determine signal importance.</p>
+<p>The training process involves adjusting these weights so that the network produces accurate results. This happens through:</p>
+<ul>
+<li>Feeding many training examples</li>
+<li>Calculating the error between the network&rsquo;s predictions and actual values</li>
+<li>Adjusting weights to minimize this error using the <a href="https://en.wikipedia.org/wiki/Backpropagation">backpropagation algorithm</a></li>
+</ul>
+<h2 id="key-concepts-in-machine-learning">Key Concepts in Machine Learning</h2>
+<h3 id="models-and-their-types">Models and Their Types</h3>
+<p><strong>Model</strong> — a mathematical or algorithmic construct that learns from data to perform a specific task. Models come in various types:</p>
+<ul>
+<li><strong>Linear models</strong>: Relatively simple models that assume a linear relationship between input and output data. Examples: <a href="https://en.wikipedia.org/wiki/Linear_regression">linear regression</a>, <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a></li>
+<li><strong>Neural networks</strong>: Multi-layered models capable of identifying complex nonlinear dependencies. Used in computer vision, natural language processing, and other complex problems</li>
+<li><strong>Ensemble models</strong>: Combinations of multiple models to produce more accurate results. Examples: <a href="https://en.wikipedia.org/wiki/Random_forest">random forests</a>, <a href="https://en.wikipedia.org/wiki/Gradient_boosting">gradient boosting</a></li>
+</ul>
+<h3 id="tensors-and-their-role-in-ml">Tensors and Their Role in ML</h3>
+<p><strong>Tensor</strong> — a generalization of <a href="https://en.wikipedia.org/wiki/Scalar_%28mathematics%29">scalars</a>, vectors, and matrices to multi-dimensional data arrays. Tensors are fundamental data structures in modern machine learning systems:</p>
+<ul>
+<li><strong>Scalar</strong>: Rank-0 tensor (0-D). Example: the number 5</li>
+<li><strong>Vector</strong>: Rank-1 tensor (1-D). Example: [1, 2, 3]</li>
+<li><strong>Matrix</strong>: Rank-2 tensor (2-D). Example: [[1, 2, 3], [4, 5, 6]]</li>
+<li><strong>Multi-dimensional tensor</strong>: Rank-3+ tensor (3-D and higher). Example: [[[1, 2], [3, 4]], [[5, 6], [7, 8]]]</li>
+</ul>
+<p>Tensors are used to represent and process various types of data in <strong>ML</strong>:</p>
+<ul>
+<li>Images <em>(4D tensors: [batch_size, height, width, channels])</em></li>
+<li>Text <em>(sequences of vectors representing words or tokens)</em></li>
+<li>Time series <em>(sequences of observations over time)</em></li>
+</ul>
+<h3 id="learning-types">Learning Types</h3>
+<p><strong>Learning</strong> — the process by which a model adjusts its parameters based on data:</p>
+<ul>
+<li><strong>Supervised Learning</strong>: The model learns from labeled data where the correct answer is known for each input example. Example tasks: image classification, price prediction, speech recognition</li>
+<li><strong>Unsupervised Learning</strong>: The model learns from unlabeled data, uncovering hidden structures and patterns. Example tasks: <a href="https://en.wikipedia.org/wiki/Cluster_analysis">clustering</a>, <a href="https://en.wikipedia.org/wiki/Dimensionality_reduction">dimensionality reduction</a>, <a href="https://en.wikipedia.org/wiki/Anomaly_detection">anomaly detection</a></li>
+<li><strong>Reinforcement Learning</strong>: The model learns by interacting with an environment, receiving rewards or penalties for its actions. Applied in robotics, gaming, autonomous systems</li>
+</ul>
+<h3 id="hyperparameters-and-their-tuning">Hyperparameters and Their Tuning</h3>
+<p><strong>Hyperparameters</strong> — model settings defined before training and not altered during the process:</p>
+<ul>
+<li><strong>Architectural hyperparameters</strong>: Number of layers in a neural network, number of neurons per layer, types of activation functions</li>
+<li><strong>Optimization parameters</strong>: Learning rate, batch size, number of training epochs</li>
+<li><strong>Regularization parameters</strong>: L1/L2 regularization coefficients, dropout rate to prevent overfitting</li>
+</ul>
+<p>Hyperparameter tuning is typically done using methods like <strong>grid search</strong>, <strong>random search</strong>, or <strong>Bayesian optimization</strong>.</p>
+<h3 id="model-evaluation-metrics">Model Evaluation Metrics</h3>
+<p><strong>Metrics</strong> — quantitative measures used to assess model performance:</p>
+<ul>
+<li><strong>For classification tasks</strong>:
+<ul>
+<li><strong>Accuracy</strong>: Proportion of correct predictions among all predictions</li>
+<li><strong>Precision &amp; Recall</strong>: Metrics reflecting the balance between false positives and false negatives</li>
+<li><strong>F1-score</strong>: Harmonic mean of precision and recall</li>
+<li><strong>ROC-AUC</strong>: Area under the <a href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC curve</a>, indicating the model&rsquo;s ability to distinguish classes</li>
+</ul>
+</li>
+<li><strong>For regression tasks</strong>:
+<ul>
+<li><strong>Mean squared error (MSE)</strong>: Average of squared differences between predicted and actual values</li>
+<li><strong>Mean absolute error (MAE)</strong>: Average of absolute differences between predicted and actual values</li>
+<li><strong>Coefficient of determination (R²)</strong>: Measures how well the model explains data variation</li>
+</ul>
+</li>
+</ul>
+<p>The choice of metric depends on the specific task and business context. For instance, in medical diagnostics, minimizing false negatives is critical, while in recommender systems, the quality of top recommendations may be more important.</p>
+<p>Now that we’ve covered the key concepts of machine learning, let’s move on to the tools that enable their application in the <strong>Elixir</strong> ecosystem.</p>
+<hr>
+<h2 id="elixir-tools-for-machine-learning"><strong>Elixir</strong> Tools for Machine Learning</h2>
+<p>The machine learning ecosystem in <strong>Elixir</strong> is rapidly evolving, offering increasingly powerful and developer-friendly tools. Let’s explore the key libraries that enable <strong>ML</strong> on the <strong>BEAM</strong> platform.</p>
+<h3 id="numerical-elixir-nx-the-foundation-for-computation"><a href="https://github.com/elixir-nx">Numerical Elixir</a> (Nx): The Foundation for Computation</h3>
+<p><a href="https://github.com/elixir-nx/nx"><strong>Nx</strong></a> is the backbone of <strong>Elixir</strong>&rsquo;s ML ecosystem, developed by the <strong>Dashbit</strong> team under the leadership of José Valim (the creator of <strong>Elixir</strong>). This library provides high-performance numerical computing and support for multi-dimensional tensors, which are critical for machine learning.</p>
+<h4 id="key-features-of-nx">Key Features of Nx:</h4>
+<ul>
+<li><strong>Tensor operations</strong>: A comprehensive set of functions for manipulating multi-dimensional data arrays.</li>
+<li><strong>Numerical stability</strong>: High-precision computations with error control.</li>
+<li><strong>Computation compilation</strong>: Transforms <strong>Elixir</strong> code into optimized machine code.</li>
+<li><strong>Automatic differentiation</strong>: Essential for backpropagation algorithms.</li>
+</ul>
+<p>A particularly powerful feature of <strong>Nx</strong> is the <code>defn</code> system (definable numerical functions), which compiles computations into efficient low-level code:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="kd">defmodule</span> <span class="nc">MathOps</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="kn">import</span> <span class="nc">Nx.Defn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">defn</span> <span class="n">multiply_and_add</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">+</span> <span class="n">c</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Usage</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">z</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nc">MathOps</span><span class="o">.</span><span class="n">multiply_and_add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># Result: Nx.tensor([11, 18, 27])</span>
+</span></span></code></pre></div><h4 id="supported-nx-backends">Supported Nx Backends:</h4>
+<p><strong>Nx</strong> operates via a backend system that determines where and how computations are executed:</p>
+<ul>
+<li><strong>EXLA</strong>: Integration with <a href="https://openxla.org/xla"><strong>XLA</strong> <strong><em>(Accelerated Linear Algebra)</em></strong></a> from <strong>Google</strong>, enabling compilation for <strong>CPU</strong>, <strong>GPU</strong>, and <strong>TPU</strong>.</li>
+<li><strong>Torchx</strong>: Connection to <a href="https://pytorch.org"><strong>PyTorch</strong></a>, leveraging its optimized <a href="https://en.wikipedia.org/wiki/CUDA"><strong>CUDA</strong></a> operations.</li>
+<li><strong>ONNX</strong>: Support for <a href="https://onnx.ai"><strong>Open Neural Network Exchange</strong></a> for compatibility with a wide range of models.</li>
+<li><strong>BinaryBackend</strong>: Native <strong>Elixir</strong> implementation with no external dependencies.</li>
+</ul>
+<p>Backend selection depends on the task and available hardware:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="c1"># Global use of EXLA backend</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Nx</span><span class="o">.</span><span class="n">global_default_backend</span><span class="p">(</span><span class="nc">EXLA.Backend</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Using PyTorch for a specific operation</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Nx</span><span class="o">.</span><span class="n">backend_transfer</span><span class="p">(</span><span class="n">tensor</span><span class="p">,</span> <span class="p">{</span><span class="nc">Torchx.Backend</span><span class="p">,</span> <span class="ss">device</span><span class="p">:</span> <span class="ss">:cuda</span><span class="p">})</span>
+</span></span></code></pre></div><h3 id="axon-neural-networks-with-a-functional-approach"><a href="https://github.com/elixir-nx/axon">Axon</a>: Neural Networks with a Functional Approach</h3>
+<p><strong>Axon</strong> is a high-level framework for defining, training, and evaluating neural networks, built on top of <strong>Nx</strong>. Its standout feature is its functional design, which aligns perfectly with <strong>Elixir</strong>&rsquo;s philosophy.</p>
+<h4 id="features-of-axon">Features of Axon:</h4>
+<ul>
+<li><strong>Declarative model definition</strong>: A clear pipeline approach to architecture design.</li>
+<li><strong>Built-in optimizers</strong>: Implementations of <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#Adam"><strong>Adam</strong></a>, <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent"><strong>SGD</strong></a>, and <a href="https://en.wikipedia.org/wiki/Stochastic_gradient_descent#RMSProp"><strong>RMSProp</strong></a>.</li>
+<li><strong>Loss functions</strong>: A wide range for various tasks (e.g., <a href="https://en.wikipedia.org/wiki/Mean_squared_error"><strong>MSE</strong></a>, cross-entropy).</li>
+<li><strong>Training management</strong>: Tools for early stopping, validation, and callbacks.</li>
+</ul>
+<p>Example of creating and training a classification model:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="c1"># Model definition</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Axon</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&#34;input&#34;</span><span class="p">,</span> <span class="ss">shape</span><span class="p">:</span> <span class="p">{</span><span class="no">nil</span><span class="p">,</span> <span class="mi">784</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">softmax</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Compilation and training</span>
+</span></span><span class="line"><span class="cl"><span class="n">trained_model</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="n">model</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">trainer</span><span class="p">(</span><span class="ss">:categorical_cross_entropy</span><span class="p">,</span> <span class="ss">:adam</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="ss">:accuracy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">train_data</span><span class="p">,</span> <span class="ss">epochs</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="ss">compiler</span><span class="p">:</span> <span class="nc">EXLA</span><span class="p">)</span>
+</span></span></code></pre></div><h4 id="advanced-capabilities-of-axon">Advanced Capabilities of Axon:</h4>
+<p><strong>Axon</strong> supports a wide range of layers and architectures:</p>
+<ul>
+<li><strong>Convolutional layers</strong>: For computer vision tasks (<code>Axon.conv</code>).</li>
+<li><strong>Recurrent networks</strong>: <a href="https://en.wikipedia.org/wiki/Long_short-term_memory"><strong>LSTM</strong></a>, <a href="https://en.wikipedia.org/wiki/Gated_recurrent_unit"><strong>GRU</strong></a> for sequential data.</li>
+<li><strong>Transformers</strong>: Attention mechanisms for <a href="https://en.wikipedia.org/wiki/Natural_language_processing"><strong>NLP</strong></a>.</li>
+<li><strong>Normalization</strong>: <a href="https://en.wikipedia.org/wiki/Batch_normalization"><strong>BatchNorm</strong></a>, <a href="https://en.wikipedia.org/wiki/Layer_normalization"><strong>LayerNorm</strong></a> for training stability.</li>
+<li><strong>Regularization</strong>: <a href="https://en.wikipedia.org/wiki/Dropout_%28neural_networks%29"><strong>Dropout</strong></a>, <a href="https://en.wikipedia.org/wiki/Regularization_%28mathematics%29"><strong>L1/L2</strong></a> to combat overfitting.</li>
+</ul>
+<p>Example of a convolutional network for image classification:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Axon</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&#34;input&#34;</span><span class="p">,</span> <span class="ss">shape</span><span class="p">:</span> <span class="p">{</span><span class="no">nil</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="ss">kernel_size</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">padding</span><span class="p">:</span> <span class="ss">:same</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">max_pool</span><span class="p">(</span><span class="ss">kernel_size</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">conv</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="ss">kernel_size</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="ss">padding</span><span class="p">:</span> <span class="ss">:same</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">max_pool</span><span class="p">(</span><span class="ss">kernel_size</span><span class="p">:</span> <span class="mi">2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">relu</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">softmax</span><span class="p">()</span>
+</span></span></code></pre></div><h3 id="explorer-data-processing-and-preparation"><a href="https://github.com/elixir-explorer/explorer">Explorer</a>: Data Processing and Preparation</h3>
+<p><strong>Explorer</strong> is a library for working with tabular data, inspired by <strong>Python</strong>&rsquo;s <a href="https://pandas.pydata.org"><strong>Pandas</strong></a>. It integrates seamlessly with <strong>Nx</strong>, enabling easy conversion of data into tensors.</p>
+<h4 id="key-features-of-explorer">Key Features of Explorer:</h4>
+<ul>
+<li><strong>DataFrame API</strong>: Powerful interface for data manipulation.</li>
+<li><strong>Filtering and grouping</strong>: Efficient handling of large datasets.</li>
+<li><strong>Loading/saving</strong>: Support for <strong>CSV</strong>, <strong>Parquet</strong>, <strong>JSON</strong>, and other formats.</li>
+<li><strong>Visualization</strong>: Integration with <a href="https://vega.github.io/vega-lite/examples/"><strong>Vega-Lite</strong></a> for charting.</li>
+</ul>
+<p>Example of data processing:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="c1"># Loading and processing data</span>
+</span></span><span class="line"><span class="cl"><span class="n">df</span> <span class="o">=</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">from_csv!</span><span class="p">(</span><span class="s2">&#34;titanic.csv&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">filter</span><span class="p">(</span><span class="n">age</span> <span class="o">&gt;</span> <span class="mi">18</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">select</span><span class="p">([</span><span class="s2">&#34;survived&#34;</span><span class="p">,</span> <span class="s2">&#34;age&#34;</span><span class="p">,</span> <span class="s2">&#34;sex&#34;</span><span class="p">,</span> <span class="s2">&#34;fare&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">mutate</span><span class="p">(</span><span class="ss">fare_category</span><span class="p">:</span> <span class="n">apply</span><span class="p">(</span><span class="n">fare</span><span class="p">,</span> <span class="k">fn</span> <span class="n">fare</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">cond</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">      <span class="n">fare</span> <span class="o">&lt;</span> <span class="mi">20</span> <span class="o">-&gt;</span> <span class="s2">&#34;low&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="n">fare</span> <span class="o">&lt;</span> <span class="mi">50</span> <span class="o">-&gt;</span> <span class="s2">&#34;medium&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="no">true</span> <span class="o">-&gt;</span> <span class="s2">&#34;high&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#### Converting to Tensors for ML</span>
+</span></span><span class="line"><span class="cl"><span class="n">features</span> <span class="o">=</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">to_nx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;age&#34;</span><span class="p">,</span> <span class="s2">&#34;sex&#34;</span><span class="p">,</span> <span class="s2">&#34;fare&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="n">labels</span> <span class="o">=</span> <span class="nc">Explorer.DataFrame</span><span class="o">.</span><span class="n">to_nx</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;survived&#34;</span><span class="p">])</span>
+</span></span></code></pre></div><h3 id="bumblebee-pre-trained-models-for-practical-use"><a href="https://github.com/elixir-nx/bumblebee">Bumblebee</a>: Pre-trained Models for Practical Use</h3>
+<p><strong>Bumblebee</strong> provides pre-trained models and tools for deploying them, simplifying the use of state-of-the-art models without training from scratch.</p>
+<h4 id="key-features">Key Features:</h4>
+<ul>
+<li><strong>Pre-trained models</strong>: <a href="https://huggingface.co/docs/transformers/model_doc/bert"><strong>BERT</strong></a>, <a href="https://huggingface.co/openai-community/gpt2"><strong>GPT-2</strong></a>, <a href="https://pytorch.org/vision/stable/models/resnet.html"><strong>ResNet</strong></a>, <a href="https://huggingface.co/docs/transformers/model_doc/clip"><strong>CLIP</strong></a>, <a href="https://dockyard.com/blog/2022/12/15/stable-diffusion-with-bumblebee"><strong>Stable Diffusion</strong></a>, and more.</li>
+<li><strong>Built-in pipelines</strong>: Ready-made solutions for common tasks.</li>
+<li><strong>Hugging Face integration</strong>: Access to thousands of models.</li>
+<li><strong>Optimized inference</strong>: Efficient execution on various hardware.</li>
+</ul>
+<p>Example for sentiment analysis:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">model_info</span><span class="p">}</span> <span class="o">=</span> <span class="nc">Bumblebee</span><span class="o">.</span><span class="n">load_model</span><span class="p">({</span><span class="ss">:hf</span><span class="p">,</span> <span class="s2">&#34;distilbert-base-uncased-finetuned-sst-2-english&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">}</span> <span class="o">=</span> <span class="nc">Bumblebee</span><span class="o">.</span><span class="n">load_tokenizer</span><span class="p">({</span><span class="ss">:hf</span><span class="p">,</span> <span class="s2">&#34;distilbert-base-uncased&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">serving</span> <span class="o">=</span> <span class="nc">Bumblebee.Text</span><span class="o">.</span><span class="n">sentiment</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="ss">compile</span><span class="p">:</span> <span class="p">[</span><span class="ss">batch_size</span><span class="p">:</span> <span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nc">Nx.Serving</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">serving</span><span class="p">,</span> <span class="s2">&#34;I love Elixir, it&#39;s an amazing language!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; %{predictions: [%{label: &#34;POSITIVE&#34;, score: 0.998}]}</span>
+</span></span></code></pre></div><h3 id="nxserving-deploying-models-in-production"><a href="https://hexdocs.pm/nx/Nx.Serving.html">Nx.Serving</a>: Deploying Models in Production</h3>
+<p><strong>Nx.Serving</strong> is a tool for efficiently deploying <strong>ML</strong> models as services. It offers:</p>
+<ul>
+<li><strong>Request batching</strong>: Automatic grouping for efficient execution.</li>
+<li><strong>Queues and priorities</strong>: Workload management and resource allocation.</li>
+<li><strong>Hot swapping</strong>: Model updates without downtime.</li>
+<li><strong>Monitoring</strong>: Performance and resource usage tracking.</li>
+</ul>
+<p>Example of an image classification service:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="n">model_info</span> <span class="o">=</span> <span class="nc">Bumblebee</span><span class="o">.</span><span class="n">load_model</span><span class="p">({</span><span class="ss">:hf</span><span class="p">,</span> <span class="s2">&#34;microsoft/resnet-50&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="n">featurizer</span> <span class="o">=</span> <span class="nc">Bumblebee</span><span class="o">.</span><span class="n">load_featurizer</span><span class="p">({</span><span class="ss">:hf</span><span class="p">,</span> <span class="s2">&#34;microsoft/resnet-50&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">serving</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Bumblebee.Vision</span><span class="o">.</span><span class="n">image_classification</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="n">model_info</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">featurizer</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">compile</span><span class="p">:</span> <span class="p">[</span><span class="ss">batch_size</span><span class="p">:</span> <span class="mi">8</span><span class="p">],</span>  <span class="c1"># Dynamic batching</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">defn_options</span><span class="p">:</span> <span class="p">[</span><span class="ss">compiler</span><span class="p">:</span> <span class="nc">EXLA</span><span class="p">]</span>  <span class="c1"># GPU acceleration</span>
+</span></span><span class="line"><span class="cl">  <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Running as an OTP process</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">pid</span><span class="p">}</span> <span class="o">=</span> <span class="nc">Nx.Serving</span><span class="o">.</span><span class="n">start_link</span><span class="p">(</span><span class="n">serving</span><span class="p">,</span> <span class="ss">name</span><span class="p">:</span> <span class="nc">ImageClassifier</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Usage</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span><span class="ss">:ok</span><span class="p">,</span> <span class="n">image</span><span class="p">}</span> <span class="o">=</span> <span class="nc">Image</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="s2">&#34;cat.jpg&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Nx.Serving</span><span class="o">.</span><span class="n">batched_run</span><span class="p">(</span><span class="nc">ImageClassifier</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+</span></span></code></pre></div><h3 id="livebook-interactive-development-and-experimentation"><a href="https://livebook.dev">LiveBook</a>: Interactive Development and Experimentation</h3>
+<p><strong>LiveBook</strong> is an interactive environment for developing and documenting <strong>Elixir</strong> code, ideal for <strong>ML</strong> experiments. It provides:</p>
+<ul>
+<li><strong>Jupyter-like interface</strong>: Interactive code cells.</li>
+<li><strong>Built-in visualization</strong>: Charts, graphs, tables.</li>
+<li><strong>Integration with ML libraries</strong>: Special widgets for <strong>Nx</strong>, <strong>Axon</strong>, <strong>Explorer</strong>.</li>
+<li><strong>Collaboration</strong>: Share and collaborate on notebooks.</li>
+<li><strong>GPU execution</strong>: Hardware acceleration support.</li>
+</ul>
+<p><strong>LiveBook</strong> simplifies learning, experimentation, and documentation for <strong>Elixir</strong> <strong>ML</strong> projects:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="c1"># Example LiveBook cell</span>
+</span></span><span class="line"><span class="cl"><span class="nc">Mix</span><span class="o">.</span><span class="n">install</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="ss">:nx</span><span class="p">,</span> <span class="s2">&#34;~&gt; 0.5&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="ss">:axon</span><span class="p">,</span> <span class="s2">&#34;~&gt; 0.5&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="ss">:explorer</span><span class="p">,</span> <span class="s2">&#34;~&gt; 0.5&#34;</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">  <span class="p">{</span><span class="ss">:kino</span><span class="p">,</span> <span class="s2">&#34;~&gt; 0.8&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">### Interactive hyperparameter input</span>
+</span></span><span class="line"><span class="cl"><span class="n">form</span> <span class="o">=</span> <span class="nc">Kino.Control</span><span class="o">.</span><span class="n">form</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">  <span class="p">[</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">learning_rate</span><span class="p">:</span> <span class="nc">Kino.Input</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s2">&#34;Learning rate&#34;</span><span class="p">,</span> <span class="ss">default</span><span class="p">:</span> <span class="s2">&#34;0.001&#34;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="ss">epochs</span><span class="p">:</span> <span class="nc">Kino.Input</span><span class="o">.</span><span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">100</span><span class="p">,</span> <span class="ss">default</span><span class="p">:</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">],</span>
+</span></span><span class="line"><span class="cl">  <span class="ss">submit</span><span class="p">:</span> <span class="s2">&#34;Train model&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><h3 id="scholar-traditional-machine-learning-algorithms"><a href="https://github.com/elixir-nx/scholar">Scholar</a>: Traditional Machine Learning Algorithms</h3>
+<p><strong>Scholar</strong> extends the <strong>Elixir ML</strong> ecosystem with classical algorithms, often better suited for certain tasks than deep learning:</p>
+<ul>
+<li><strong>Linear models</strong>: Regression, <a href="https://en.wikipedia.org/wiki/Support_vector_machine"><strong>SVM</strong></a>, <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a>.</li>
+<li><strong>Decision trees</strong>: Single trees and ensembles.</li>
+<li><strong>Clustering</strong>: <a href="https://en.wikipedia.org/wiki/K-means_clustering"><strong>K-means</strong></a>, <a href="https://en.wikipedia.org/wiki/DBSCAN"><strong>DBSCAN</strong></a>.</li>
+<li><strong>Dimensionality reduction</strong>: <a href="https://en.wikipedia.org/wiki/Principal_component_analysis"><strong>PCA</strong></a>, <a href="https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding"><strong>t-SNE</strong></a>.</li>
+<li><strong>Statistical methods</strong>: <a href="https://en.wikipedia.org/wiki/Bayesian_statistics">Bayesian models</a>, <a href="https://en.wikipedia.org/wiki/Density_estimation">density estimation</a>.</li>
+</ul>
+<h4 id="example-of-using-linear-regression">Example of using linear regression</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nc">Scholar.Linear.LinearRegression</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nc">Nx.Defn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Data preparation</span>
+</span></span><span class="line"><span class="cl"><span class="n">x</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">],</span> <span class="p">[</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl"><span class="n">y</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([</span><span class="mf">6.0</span><span class="p">,</span> <span class="mf">8.0</span><span class="p">,</span> <span class="mf">9.0</span><span class="p">,</span> <span class="mf">11.0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Model training</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Prediction</span>
+</span></span><span class="line"><span class="cl"><span class="n">predict</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">tensor</span><span class="p">([[</span><span class="mf">3.0</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">]]))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># =&gt; #Nx.Tensor</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  f32[1]</span>
+</span></span><span class="line"><span class="cl"><span class="c1">#  [17.0]</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># &gt;</span>
+</span></span></code></pre></div><h3 id="practical-application-integration-with-phoenix">Practical Application: Integration with Phoenix</h3>
+<p>It&rsquo;s worth noting how seamlessly <strong>ML</strong> models integrate with the <a href="https://www.phoenixframework.org">Phoenix</a> web framework, enabling powerful intelligent web applications:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="kd">defmodule</span> <span class="nc">MyAppWeb.MLController</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">  <span class="kn">use</span> <span class="nc">MyAppWeb</span><span class="p">,</span> <span class="ss">:controller</span>
+</span></span><span class="line"><span class="cl">  <span class="kn">alias</span> <span class="nc">Nx.Serving</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1"># Model initialization at application start</span>
+</span></span><span class="line"><span class="cl">  <span class="na">@serving</span> <span class="nc">Bumblebee.Text</span><span class="o">.</span><span class="n">sentiment</span><span class="p">(</span><span class="n">model_info</span><span class="p">,</span> <span class="n">tokenizer</span><span class="p">,</span> <span class="ss">compile</span><span class="p">:</span> <span class="p">[</span><span class="ss">batch_size</span><span class="p">:</span> <span class="mi">4</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Serving</span><span class="o">.</span><span class="n">start_link</span><span class="p">(</span><span class="na">@serving</span><span class="p">,</span> <span class="ss">name</span><span class="p">:</span> <span class="nc">SentimentAnalyzer</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">def</span> <span class="n">analyze</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="p">%{</span><span class="s2">&#34;text&#34;</span> <span class="o">=&gt;</span> <span class="n">text</span><span class="p">})</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># Asynchronous analysis</span>
+</span></span><span class="line"><span class="cl">    <span class="nc">Task</span><span class="o">.</span><span class="n">async</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="nc">Serving</span><span class="o">.</span><span class="n">batched_run</span><span class="p">(</span><span class="nc">SentimentAnalyzer</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="o">|&gt;</span> <span class="nc">Task</span><span class="o">.</span><span class="n">await</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="o">|&gt;</span> <span class="k">case</span> <span class="k">do</span>
+</span></span><span class="line"><span class="cl">      <span class="p">%{</span><span class="ss">predictions</span><span class="p">:</span> <span class="p">[%{</span><span class="ss">label</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span> <span class="ss">score</span><span class="p">:</span> <span class="n">score</span><span class="p">}]}</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">json</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="p">%{</span><span class="ss">sentiment</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span> <span class="ss">confidence</span><span class="p">:</span> <span class="n">score</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">      <span class="n">_</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">conn</span>
+</span></span><span class="line"><span class="cl">        <span class="o">|&gt;</span> <span class="n">put_status</span><span class="p">(</span><span class="mi">422</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="o">|&gt;</span> <span class="n">json</span><span class="p">(%{</span><span class="ss">error</span><span class="p">:</span> <span class="s2">&#34;Analysis failed&#34;</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">    <span class="k">end</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span>
+</span></span><span class="line"><span class="cl"><span class="k">end</span>
+</span></span></code></pre></div><p>This integration makes it easy to create <strong>APIs</strong> for text analysis, image classification, recommendation systems, and other <strong>ML</strong> applications while leveraging <strong>BEAM</strong>&rsquo;s advantages for horizontal scaling and high availability.</p>
+<p>The <strong>ML</strong> ecosystem in <strong>Elixir</strong> offers a balanced combination of high-level tools and low-level control, allowing developers to choose the right abstraction level for their tasks. While not as extensive as the <strong>Python</strong> ecosystem, <strong>Elixir</strong>&rsquo;s unique advantages make it attractive for certain machine learning scenarios, particularly those involving high-load systems and real-time data processing.</p>
+<h2 id="model-training-and-evaluation-example">Model Training and Evaluation Example</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-elixir" data-lang="elixir"><span class="line"><span class="cl"><span class="c1"># Data preparation</span>
+</span></span><span class="line"><span class="cl"><span class="n">train_images</span> <span class="o">=</span> <span class="n">train_images</span> <span class="o">|&gt;</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">reshape</span><span class="p">({</span><span class="mi">60000</span><span class="p">,</span> <span class="mi">784</span><span class="p">})</span> <span class="o">|&gt;</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mf">255.0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_images</span> <span class="o">=</span> <span class="n">test_images</span> <span class="o">|&gt;</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">reshape</span><span class="p">({</span><span class="mi">10000</span><span class="p">,</span> <span class="mi">784</span><span class="p">})</span> <span class="o">|&gt;</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">divide</span><span class="p">(</span><span class="mf">255.0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Creating data batches</span>
+</span></span><span class="line"><span class="cl"><span class="n">batches</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Stream</span><span class="o">.</span><span class="n">repeatedly</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">indices</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">random_uniform</span><span class="p">(</span><span class="ss">shape</span><span class="p">:</span> <span class="p">{</span><span class="mi">32</span><span class="p">},</span> <span class="ss">min</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="ss">max</span><span class="p">:</span> <span class="mi">60000</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">as_type</span><span class="p">(</span><span class="ss">:s64</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">train_images</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="nc">Nx</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="n">train_labels</span><span class="p">,</span> <span class="n">indices</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">{</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">end</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Model definition with regularization and dropout</span>
+</span></span><span class="line"><span class="cl"><span class="n">model</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="nc">Axon</span><span class="o">.</span><span class="n">input</span><span class="p">(</span><span class="s2">&#34;input&#34;</span><span class="p">,</span> <span class="ss">shape</span><span class="p">:</span> <span class="p">{</span><span class="no">nil</span><span class="p">,</span> <span class="mi">784</span><span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="ss">activation</span><span class="p">:</span> <span class="ss">:relu</span><span class="p">,</span> <span class="ss">kernel_regularizer</span><span class="p">:</span> <span class="ss">:l2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="ss">rate</span><span class="p">:</span> <span class="mf">0.4</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="ss">activation</span><span class="p">:</span> <span class="ss">:relu</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dropout</span><span class="p">(</span><span class="ss">rate</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon</span><span class="o">.</span><span class="n">dense</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="ss">activation</span><span class="p">:</span> <span class="ss">:softmax</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Training with early stopping and hyperparameter optimization</span>
+</span></span><span class="line"><span class="cl"><span class="n">trained_model_state</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="n">model</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">trainer</span><span class="p">(</span><span class="ss">:categorical_cross_entropy</span><span class="p">,</span> <span class="nc">Axon.Optimizers</span><span class="o">.</span><span class="n">adam</span><span class="p">(</span><span class="ss">learning_rate</span><span class="p">:</span> <span class="mf">0.001</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="ss">:accuracy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">validate</span><span class="p">(</span><span class="n">test_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">early_stopping</span><span class="p">(</span><span class="s2">&#34;validation_loss&#34;</span><span class="p">,</span> <span class="ss">patience</span><span class="p">:</span> <span class="mi">5</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">batches</span><span class="p">,</span> <span class="ss">epochs</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="ss">iterations</span><span class="p">:</span> <span class="mi">1000</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Model evaluation</span>
+</span></span><span class="line"><span class="cl"><span class="n">test_data</span> <span class="o">=</span> <span class="nc">Stream</span><span class="o">.</span><span class="n">repeatedly</span><span class="p">(</span><span class="k">fn</span> <span class="o">-&gt;</span> <span class="p">{</span><span class="n">test_images</span><span class="p">,</span> <span class="n">test_labels</span><span class="p">}</span> <span class="k">end</span><span class="p">)</span> <span class="o">|&gt;</span> <span class="nc">Stream</span><span class="o">.</span><span class="n">take</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">eval_results</span> <span class="o">=</span>
+</span></span><span class="line"><span class="cl">  <span class="n">model</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">evaluator</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">metric</span><span class="p">(</span><span class="ss">:accuracy</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="o">|&gt;</span> <span class="nc">Axon.Loop</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">test_data</span><span class="p">,</span> <span class="n">trained_model_state</span><span class="p">)</span>
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<table>
+  <thead>
+      <tr>
+          <th>Criterion</th>
+          <th>Elixir (Nx/Axon)</th>
+          <th>Python (TensorFlow/PyTorch)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Ecosystem Maturity</td>
+          <td>Emerging</td>
+          <td>Mature</td>
+      </tr>
+      <tr>
+          <td>Performance</td>
+          <td>High (distributed systems)</td>
+          <td>GPU/TPU optimized</td>
+      </tr>
+      <tr>
+          <td>Hardware Support</td>
+          <td>CPU/GPU (via EXLA)</td>
+          <td>Extensive (CUDA, TPU, ROCm)</td>
+      </tr>
+      <tr>
+          <td>Concurrency</td>
+          <td>Built-in (BEAM VM)</td>
+          <td>Library-dependent</td>
+      </tr>
+      <tr>
+          <td>Available Models</td>
+          <td>Limited (Bumblebee)</td>
+          <td>Vast model repositories</td>
+      </tr>
+      <tr>
+          <td>Web Integration</td>
+          <td>Native (Phoenix LiveView)</td>
+          <td>Via Flask/FastAPI/Django</td>
+      </tr>
+      <tr>
+          <td>Deployment</td>
+          <td>Simple (Mix releases + OTP)</td>
+          <td>Complex (Docker/K8s)</td>
+      </tr>
+      <tr>
+          <td>Community</td>
+          <td>Growing</td>
+          <td>Massive</td>
+      </tr>
+      <tr>
+          <td>Documentation</td>
+          <td>High-quality (hexdocs)</td>
+          <td>Extensive but fragmented</td>
+      </tr>
+      <tr>
+          <td>Production Use</td>
+          <td>Erlang ecosystem (WhatsApp, Discord)</td>
+          <td>Industry leader (Google, Meta)</td>
+      </tr>
+  </tbody>
+</table>
+<p>The best strategy often involves a hybrid approach: training models in <strong>Python</strong> and integrating them into <strong>Elixir</strong> systems for inference.</p>
+<h2 id="advantages-of-elixir-for-ml">Advantages of Elixir for ML</h2>
+<ol>
+<li><strong>Distributed Computing</strong>: <strong>BEAM</strong> enables easy distribution of training tasks across cluster nodes.</li>
+<li><strong>Real-time Processing</strong>: Thanks to actors and <strong>OTP</strong>, <strong>Elixir</strong> excels at streaming data processing (e.g., for <strong>IoT</strong>).</li>
+<li><strong>Reliability</strong>: Models can run in production with minimal downtime.</li>
+</ol>
+<h2 id="limitations-and-challenges">Limitations and Challenges</h2>
+<p>Despite rapid development, <strong>Elixir</strong>&rsquo;s <strong>ML</strong> ecosystem has some limitations:</p>
+<ul>
+<li>Lack of certain specialized algorithms and optimization methods</li>
+<li>Lower performance for very large models compared to optimized <strong>Python</strong> libraries</li>
+<li>Limited <strong>TPU</strong> support</li>
+<li>Fewer documentation and learning resources</li>
+<li>Not all modern architectures (e.g., some transformers) have efficient implementations</li>
+</ul>
+<h2 id="practical-applications">Practical Applications</h2>
+<p>When to use <strong>Elixir</strong> for <strong>ML</strong>:</p>
+<ul>
+<li>For integrating <strong>ML</strong> into existing <strong>Elixir/Phoenix</strong> applications</li>
+<li>In systems requiring high fault tolerance and scalability</li>
+<li>For real-time data processing and online learning</li>
+<li>In distributed systems where concurrency matters</li>
+</ul>
+<p>When <strong>Python</strong> is preferable:</p>
+<ul>
+<li>For research and prototyping</li>
+<li>When working with very large models (e.g., LLMs)</li>
+<li>When specialized algorithms only available in <strong>Python</strong> are needed</li>
+<li>With tight deadlines requiring ready-made solutions</li>
+</ul>
+<h2 id="the-future-of-neural-networks-in-elixir">The Future of Neural Networks in Elixir</h2>
+<p>The <strong>Elixir</strong> <strong>ML</strong> ecosystem is young but promising. Community efforts focus on:</p>
+<ul>
+<li>Improving hardware acceleration integration (<strong>GPU/TPU</strong>)</li>
+<li>Expanding pre-trained models in <strong>Axon</strong></li>
+<li>Enhancing data processing tools (<strong>Explorer</strong>, <strong>Scholar</strong>)</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<p>The <strong>ML</strong> ecosystem in <strong>Elixir</strong> is growing rapidly thanks to companies like <a href="https://dashbit.co">Dashbit</a> and developer contributions. For those wanting to dive deeper, we recommend:</p>
+<ul>
+<li><a href="https://hexdocs.pm/nx">Official Nx Documentation</a></li>
+<li><a href="https://github.com/elixir-nx/axon">Axon GitHub Repository</a></li>
+<li><a href="https://www.youtube.com/watch?v=Xk1WPGKaDBg">Train a Neural Network in Minutes with Elixir &amp; Axon</a></li>
+<li><a href="https://www.youtube.com/watch?v=Es08MRtSkoE&amp;t=1345s">A Practical Guide to Machine Learning in Elixir - Chris Grainger</a></li>
+<li><a href="https://livebook.dev/">Livebook as an ML Experimentation Tool</a></li>
+</ul>
+<hr>
+<h2 id="from-the-author">From the Author</h2>
+<p>Thank you for reading! I hope this article helped you understand <strong>Elixir</strong>&rsquo;s potential in machine learning and inspired you to experiment with this powerful technology combination.</p>
+<p>The <strong>Elixir</strong> <strong>ML</strong> ecosystem is evolving, and I welcome discussions about any questions, suggestions, or corrections. If you spot inaccuracies or have interesting additions—please share them in the comments. Constructive feedback is always valuable 😎</p>
+<p>In Part 2, we&rsquo;ll build a complete ML project in Elixir, so stay tuned!</p></article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script type="application/javascript" src='http://localhost:1313/js/search.js'></script>
+
+
+
+</html>
