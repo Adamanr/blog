@@ -1,0 +1,6 @@
+.markdown h1,
+.markdown h2,
+.markdown h3 {
+    border-bottom: none !important;
+    text-decoration: none !important;
+}

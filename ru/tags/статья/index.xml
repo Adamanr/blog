@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Статья on Adaman blog</title>
+    <link>https://adamanr.github.io/blog/ru/tags/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F/</link>
+    <description>Recent content in Статья on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Thu, 15 May 2025 00:41:17 +0500</lastBuildDate>
+    <atom:link href="https://adamanr.github.io/blog/ru/tags/%D1%81%D1%82%D0%B0%D1%82%D1%8C%D1%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elixir для Machine Learning. Часть 1 - Теория</title>
+      <link>https://adamanr.github.io/blog/ru/post/ml_for_elixir_1/</link>
+      <pubDate>Wed, 02 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/ru/post/ml_for_elixir_1/</guid>
+      <description>&lt;p&gt;В последнее время роль искусственного интеллекта в различных сферах начинает набирать обороты. Многие компании уже внедряют ИИ для помощи пользователям на своих порталах, а некоторые разрабатывают собственные нейронные сети для решения специализированных задач&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

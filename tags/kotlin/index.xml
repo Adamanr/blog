@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kotlin on Adaman blog</title>
+    <link>https://adamanr.github.io/blog/tags/kotlin/</link>
+    <description>Recent content in Kotlin on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 16 May 2025 16:20:16 +0500</lastBuildDate>
+    <atom:link href="https://adamanr.github.io/blog/tags/kotlin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🤔 Из интересного за последнее время — обновление [индекса TI</title>
+      <link>https://adamanr.github.io/blog/post/2025-01-06_18-49-21_msg_92/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2025-01-06_18-49-21_msg_92/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>👩‍💻 Языки для входа в IT в 2025 году 6/7: [Java]</title>
+      <link>https://adamanr.github.io/blog/post/2024-12-19_13-40-10_msg_79/</link>
+      <pubDate>Thu, 19 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-12-19_13-40-10_msg_79/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>👩‍💻 Языки для входа в IT в 2025 году 4/7: [Kotlin](h</title>
+      <link>https://adamanr.github.io/blog/post/2024-12-18_11-50-01_msg_77/</link>
+      <pubDate>Wed, 18 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-12-18_11-50-01_msg_77/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>👥 Шардирование: что это, зачем и как использовать</title>
+      <link>https://adamanr.github.io/blog/post/2024-10-07_07-11-25_msg_45/</link>
+      <pubDate>Mon, 07 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-10-07_07-11-25_msg_45/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>🎩 [Dart](https://dart.dev/): Быстрый и Элегантный Язык</title>
+      <link>https://adamanr.github.io/blog/post/2024-09-21_11-31-11_msg_37/</link>
+      <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-09-21_11-31-11_msg_37/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>👧 Программирование на языке Rust!</title>
+      <link>https://adamanr.github.io/blog/post/2024-08-13_13-23-38_msg_9/</link>
+      <pubDate>Tue, 13 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-08-13_13-23-38_msg_9/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+  </channel>
+</rss>

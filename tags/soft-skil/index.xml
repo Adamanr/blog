@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Soft-Skil on Adaman blog</title>
+    <link>https://adamanr.github.io/blog/tags/soft-skil/</link>
+    <description>Recent content in Soft-Skil on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 16 May 2025 17:51:15 +0500</lastBuildDate>
+    <atom:link href="https://adamanr.github.io/blog/tags/soft-skil/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🙂 Программист-фанатик. Чед Фаулер</title>
+      <link>https://adamanr.github.io/blog/post/2024-08-12_19-51-18_msg_7/</link>
+      <pubDate>Mon, 12 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-08-12_19-51-18_msg_7/</guid>
+      <description>Рецензия на книгу Чеда Фаулера — Программист-фанатик</description>
+    </item>
+  </channel>
+</rss>

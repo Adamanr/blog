@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Adaman blog</title>
+    <link>https://adamanr.github.io/blog/tags/cloud/</link>
+    <description>Recent content in Cloud on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 16 May 2025 16:20:15 +0500</lastBuildDate>
+    <atom:link href="https://adamanr.github.io/blog/tags/cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>🤩 Виртуализация в 2024: Тренды и Перспективы</title>
+      <link>https://adamanr.github.io/blog/post/2024-10-27_13-47-46_msg_64/</link>
+      <pubDate>Sun, 27 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-10-27_13-47-46_msg_64/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>🚬 Альтернатива Discord v2 – [Quebic](https://quebic.</title>
+      <link>https://adamanr.github.io/blog/post/2024-10-15_10-51-05_msg_61/</link>
+      <pubDate>Tue, 15 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-10-15_10-51-05_msg_61/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>👷 [Grafana](https://grafana.com/): мощный инструмент д</title>
+      <link>https://adamanr.github.io/blog/post/2024-10-01_09-20-29_msg_43/</link>
+      <pubDate>Tue, 01 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-10-01_09-20-29_msg_43/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+    <item>
+      <title>💃 [Prometheus](https://prometheus.io/): что это, как р</title>
+      <link>https://adamanr.github.io/blog/post/2024-09-29_18-28-51_msg_42/</link>
+      <pubDate>Sun, 29 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>https://adamanr.github.io/blog/post/2024-09-29_18-28-51_msg_42/</guid>
+      <description>Интересная статья о технологиях и разработке</description>
+    </item>
+  </channel>
+</rss>
