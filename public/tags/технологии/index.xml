@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Технологии on Adaman blog</title>
-    <link>http://localhost:1313/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/</link>
+    <link>https://adamanr.github.io/blog/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/</link>
     <description>Recent content in Технологии on Adaman blog</description>
     <generator>Hugo</generator>
     <language>ru</language>
     <lastBuildDate>Fri, 16 May 2025 22:14:08 +0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://adamanr.github.io/blog/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>👩‍💻 GraphQL и для чего его используется</title>
-      <link>http://localhost:1313/post/2025-01-13_16-16-56_msg_94/</link>
+      <link>https://adamanr.github.io/blog/post/2025-01-13_16-16-56_msg_94/</link>
       <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2025-01-13_16-16-56_msg_94/</guid>
+      <guid>https://adamanr.github.io/blog/post/2025-01-13_16-16-56_msg_94/</guid>
       <description>Обзор технологии GraphQL и её возможностей</description>
     </item>
     <item>
       <title>☺️ Apidog: аналог Postman, но лучше</title>
-      <link>http://localhost:1313/post/2024-11-01_08-40-30_msg_66/</link>
+      <link>https://adamanr.github.io/blog/post/2024-11-01_08-40-30_msg_66/</link>
       <pubDate>Fri, 01 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-11-01_08-40-30_msg_66/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-11-01_08-40-30_msg_66/</guid>
       <description>Обзор технологии для работы с API, GraphQL и тестированием</description>
     </item>
   </channel>

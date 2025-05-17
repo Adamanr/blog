@@ -2,14 +2,14 @@
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <sitemap>
-    <loc>http://localhost:1313/ru/sitemap.xml</loc>
+    <loc>https://adamanr.github.io/blog/ru/sitemap.xml</loc>
     
       <lastmod>2025-05-17T14:26:54+05:00</lastmod>
     
   </sitemap>
   
   <sitemap>
-    <loc>http://localhost:1313/en/sitemap.xml</loc>
+    <loc>https://adamanr.github.io/blog/en/sitemap.xml</loc>
     
   </sitemap>
   

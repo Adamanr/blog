@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Angular on Adaman blog</title>
-    <link>http://localhost:1313/tags/angular/</link>
+    <link>https://adamanr.github.io/blog/tags/angular/</link>
     <description>Recent content in Angular on Adaman blog</description>
     <generator>Hugo</generator>
     <language>ru</language>
     <lastBuildDate>Fri, 16 May 2025 16:20:15 +0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/angular/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://adamanr.github.io/blog/tags/angular/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>🕺 Первый год телеграм-канала &#34;Закулисье IT&#34; — начало чего-</title>
-      <link>http://localhost:1313/post/2024-12-31_19-08-13_msg_91/</link>
+      <link>https://adamanr.github.io/blog/post/2024-12-31_19-08-13_msg_91/</link>
       <pubDate>Tue, 31 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-12-31_19-08-13_msg_91/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-12-31_19-08-13_msg_91/</guid>
       <description>Интересная статья о технологиях и разработке</description>
     </item>
     <item>
       <title>👩‍💻 Языки для входа в IT в 2025 году 2/7: JavaScript — язы</title>
-      <link>http://localhost:1313/post/2024-12-01_13-28-17_msg_73/</link>
+      <link>https://adamanr.github.io/blog/post/2024-12-01_13-28-17_msg_73/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-12-01_13-28-17_msg_73/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-12-01_13-28-17_msg_73/</guid>
       <description>Интересная статья о технологиях и разработке</description>
     </item>
     <item>
       <title>🍷 Domain-Driven Design __(DDD)__: Что это такое и как помо</title>
-      <link>http://localhost:1313/post/2024-10-14_08-30-52_msg_54/</link>
+      <link>https://adamanr.github.io/blog/post/2024-10-14_08-30-52_msg_54/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-10-14_08-30-52_msg_54/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-10-14_08-30-52_msg_54/</guid>
       <description>Интересная статья о технологиях и разработке</description>
     </item>
   </channel>

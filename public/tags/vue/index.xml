@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vue on Adaman blog</title>
-    <link>http://localhost:1313/tags/vue/</link>
+    <link>https://adamanr.github.io/blog/tags/vue/</link>
     <description>Recent content in Vue on Adaman blog</description>
     <generator>Hugo</generator>
     <language>ru</language>
     <lastBuildDate>Fri, 16 May 2025 16:20:15 +0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://adamanr.github.io/blog/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>👩‍💻 Языки для входа в IT в 2025 году 2/7: JavaScript — язы</title>
-      <link>http://localhost:1313/post/2024-12-01_13-28-17_msg_73/</link>
+      <link>https://adamanr.github.io/blog/post/2024-12-01_13-28-17_msg_73/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-12-01_13-28-17_msg_73/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-12-01_13-28-17_msg_73/</guid>
       <description>Интересная статья о технологиях и разработке</description>
     </item>
     <item>
       <title>💃 [Crystal](https://crystal-lang.org/) — язык для тех,</title>
-      <link>http://localhost:1313/post/2024-09-21_10-49-34_msg_36/</link>
+      <link>https://adamanr.github.io/blog/post/2024-09-21_10-49-34_msg_36/</link>
       <pubDate>Sat, 21 Sep 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-09-21_10-49-34_msg_36/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-09-21_10-49-34_msg_36/</guid>
       <description>Интересная статья о технологиях и разработке</description>
     </item>
   </channel>

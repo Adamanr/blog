@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>AI on Adaman blog</title>
-    <link>http://localhost:1313/tags/ai/</link>
+    <link>https://adamanr.github.io/blog/tags/ai/</link>
     <description>Recent content in AI on Adaman blog</description>
     <generator>Hugo</generator>
     <language>ru</language>
     <lastBuildDate>Fri, 16 May 2025 21:55:04 +0500</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://adamanr.github.io/blog/tags/ai/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>😎 ИИ как помощник разработчика</title>
-      <link>http://localhost:1313/post/2024-12-27_09-21-04_msg_90/</link>
+      <link>https://adamanr.github.io/blog/post/2024-12-27_09-21-04_msg_90/</link>
       <pubDate>Fri, 27 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/post/2024-12-27_09-21-04_msg_90/</guid>
+      <guid>https://adamanr.github.io/blog/post/2024-12-27_09-21-04_msg_90/</guid>
       <description>Статья про основные помощники в формате чатов с ИИ, которые помогут с кодом и не только</description>
     </item>
   </channel>
