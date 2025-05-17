@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <script type="application/javascript" src='http://localhost:1313/js/theme-mode.js'></script>
+    <link rel="stylesheet" href='http://localhost:1313/css/frameworks.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github.min.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/github-style.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/light.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/dark.css' />
+    <link rel="stylesheet" href='http://localhost:1313/css/syntax.css' />
+    <title>☺️ Apidog: аналог Postman, но лучше - Adaman blog</title>
+    
+    <link rel="icon" type="image/x-icon" href='/images/github-mark.png'>
+    
+    <meta name="theme-color" content="#1e2327">
+
+    <link rel="stylesheet" href="http://localhost:1313/css/custom.css">
+    
+
+    
+    <meta name="description"
+  content="Обзор технологии для работы с API, GraphQL и тестированием" />
+<meta name="keywords"
+  content='blog, google analytics' />
+<meta name="robots" content="noodp" />
+<link rel="canonical" href="http://localhost:1313/post/2024-11-01_08-40-30_msg_66/" />
+
+
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="☺️ Apidog: аналог Postman, но лучше - Adaman blog" />
+<meta name="twitter:description"
+  content="Обзор технологии для работы с API, GraphQL и тестированием" />
+<meta name="twitter:site" content="http://localhost:1313/" />
+<meta name="twitter:creator" content="" />
+<meta name="twitter:image"
+  content="http://localhost:1313/">
+
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="☺️ Apidog: аналог Postman, но лучше - Adaman blog">
+<meta property="og:description"
+  content="Обзор технологии для работы с API, GraphQL и тестированием" />
+<meta property="og:url" content="http://localhost:1313/post/2024-11-01_08-40-30_msg_66/" />
+<meta property="og:site_name" content="☺️ Apidog: аналог Postman, но лучше" />
+<meta property="og:image"
+  content="http://localhost:1313/">
+<meta property="og:image:width" content="2048">
+<meta property="og:image:height" content="1024">
+
+<meta property="article:published_time" content="2024-11-01 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body>
+  <div style="position: relative">
+    <header
+        class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"
+    >
+        <div
+            class="Header-item mobile-none"
+            style="margin-top: -4px; margin-bottom: -4px"
+        >
+            <a class="Header-link" href="http://localhost:1313/">
+                <img
+                    class="octicon"
+                    height="32"
+                    width="32"
+                    src="/images/github-mark-white.png"
+                />
+            </a>
+        </div>
+
+        
+        <div class="Header-item d-md-none">
+            <button
+                class="Header-link btn-link js-details-target"
+                type="button"
+                onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'"
+            >
+                <svg
+                    height="24"
+                    class="octicon octicon-three-bars"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="24"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+
+        
+        <div
+            class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"
+        >
+            <div
+                class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"
+            >
+                <div class="position-relative">
+                    
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="search-input"
+                            class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus"
+                            placeholder="Поиск..."
+                            autocomplete="off"
+                        />
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        
+        <div
+            class="Header-item Header-item--full flex-justify-center d-md-none position-relative"
+        >
+            <a class="Header-link" href="http://localhost:1313/">
+                <img
+                    class="octicon octicon-mark-github v-align-middle"
+                    height="32"
+                    width="32"
+                    src="/images/github-mark-white.png"
+                />
+            </a>
+        </div>
+
+        
+        
+
+        
+        <div class="Header-item" style="margin-right: 0">
+            <a
+                href="javascript:void(0)"
+                class="Header-link no-select"
+                onclick="switchTheme()"
+            >
+                <svg
+                    style="fill: var(--color-profile-color-modes-toggle-moon)"
+                    class="no-select"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    height="16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+</div>
+
+<style>
+     
+    .search-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .Header-search-input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        background-color: var(--color-header-bg);
+        color: var(--color-text-primary);
+    }
+
+    .Header-search-input:focus {
+        outline: none;
+        border-color: #0366d6;
+        box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    }
+
+    .search-results {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-primary);
+        border: 1px solid var(--color-border-primary);
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        z-index: 100;
+        max-height: 70vh;
+        overflow-y: auto;
+        margin-top: 5px;
+    }
+
+    .search-result-item {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--color-border-secondary);
+        transition: background 0.2s ease;
+    }
+
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+
+    .search-result-item:hover {
+        background-color: var(--color-bg-tertiary);
+    }
+
+    .search-result-item a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .search-result-item h4 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+        color: var(--color-text-primary);
+    }
+
+    .search-result-item p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .no-results {
+        padding: 12px 16px;
+        color: var(--color-text-secondary);
+        text-align: center;
+    }
+
+     
+    .highlight {
+        background-color: rgba(255, 212, 0, 0.4);
+        font-weight: bold;
+        padding: 0 1px;
+        border-radius: 2px;
+    }
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        
+        
+        fetch("/index.json")
+            .then((response) => {
+                
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Search index loaded:", data.length, "items"); 
+
+                const options = {
+                    includeScore: true,
+                    keys: [
+                        { name: "title", weight: 0.7 },
+                        { name: "content", weight: 0.3 },
+                        { name: "tags", weight: 0.5 }
+                    ],
+                    threshold: 0.4,
+                    ignoreLocation: true,
+                    includeMatches: true,
+                    minMatchCharLength: 2
+                };
+
+                const fuse = new Fuse(data, options);
+
+                const searchInput = document.getElementById("search-input");
+                const searchResults = document.getElementById("search-results");
+
+                if (searchInput && searchResults) {
+                    searchInput.addEventListener("input", function (e) {
+                        const query = e.target.value.trim();
+
+                        
+                        if (query.length < 2) {
+                            searchResults.innerHTML = "";
+                            searchResults.style.display = "none";
+                            return;
+                        }
+
+                        try {
+                            const results = fuse.search(query);
+                            console.log("Found results:", results.length); 
+
+                            if (results.length > 0) {
+                                searchResults.innerHTML = results
+                                    .slice(0, 8)
+                                    .map((result) => {
+                                        
+                                        const escapeHtml = (text) => {
+                                            return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                                        };
+
+                                        const title = escapeHtml(result.item.title);
+                                        const description = result.item.description ? escapeHtml(result.item.description) : '';
+                                        const permalink = escapeHtml(result.item.permalink);
+
+                                        return `
+                                        <div class="search-result-item">
+                                            <a href="${permalink}">
+                                                <h4>${title}</h4>
+                                                ${description ? `<p>${description}</p>` : ''}
+                                            </a>
+                                        </div>
+                                        `;
+                                    })
+                                    .join("");
+                                searchResults.style.display = "block";
+                            } else {
+                                searchResults.innerHTML =
+                                    '<div class="no-results">Ничего не найдено. Попробуйте изменить запрос</div>';
+                                searchResults.style.display = "block";
+                            }
+                        } catch (error) {
+                            console.error("Search error:", error);
+                            searchResults.innerHTML =
+                                '<div class="no-results">Ошибка поиска</div>';
+                            searchResults.style.display = "block";
+                        }
+                    });
+
+                    
+                    document.addEventListener("click", function (e) {
+                        if (!searchContainer.contains(e.target)) {
+                            searchResults.style.display = "none";
+                        }
+                    });
+                } else {
+                    console.error("Search elements not found");
+                }
+            })
+            .catch((error) => {
+                console.error("Error loading search index:", error);
+                
+                const searchResults = document.getElementById("search-results");
+                if (searchResults) {
+                    searchResults.innerHTML =
+                        '<div class="no-results">Поиск временно недоступен</div>';
+                }
+            });
+        
+    });
+</script>
+
+  <div id="search-result" class="container-lg px-3 new-discussion-timeline" style="display: none;">
+</div>
+
+  
+<div class="application-main">
+  <div>
+  <main>
+    <div class="gisthead pagehead bg-gray-light pb-0 pt-3 mb-4">
+      <div class="px-0">
+        <div class="mb-3 d-flex px-3 px-md-3 px-lg-5">
+          <div class="flex-auto min-width-0 width-fit mr-3">
+            <div class="d-flex">
+              <div class="d-none d-md-block">
+                <a class="avatar mr-2 flex-shrink-0" href="http://localhost:1313/">
+                  <img class=" avatar-user"
+                    src="/images/avatar.png"
+                    width="32" height="32"></a>
+              </div>
+              <div class="d-flex flex-column">
+                <h1 class="break-word f3 text-normal mb-md-0 mb-1">
+                  <span class="author">
+                    <a href="http://localhost:1313/">Artyom</a>
+                  </span>
+                  <span class="path-divider">/</span>
+                  <strong class="css-truncate css-truncate-target mr-1" style="max-width: 410px">
+                    <a href="http://localhost:1313/post/2024-11-01_08-40-30_msg_66/">☺️ Apidog: аналог Postman, но лучше</a>
+                  </strong>
+                </h1>
+                <div class="note m-0">
+                  Created <relative-time datetime="Fri, 01 Nov 2024 00:00:00 &#43;0000"
+                    class="no-wrap">
+                    Fri, 01 Nov 2024 00:00:00 &#43;0000</relative-time>
+
+                  
+                  <span class="file-info-divider"></span>
+                  Modified <relative-time datetime="Fri, 16 May 2025 21:21:03 &#43;0500"
+                    class="no-wrap">
+                    Fri, 16 May 2025 21:21:03 &#43;0500</relative-time>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-lg px-3 new-discussion-timeline">
+      <div class="repository-content gist-content">
+        <div>
+          <div class="js-gist-file-update-container js-task-list-container file-box">
+            <div id="file-pytest" class="file my-2">
+              <div id="post-header" class="file-header d-flex flex-md-items-center flex-items-start sticky-header" style="z-index: 2">
+                <div class="file-info d-flex flex-md-items-center flex-items-start flex-order-1 flex-auto">
+                  <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
+                    
+                    <summary id="toc-toggle" onclick="clickToc()" class="btn btn-octicon m-0 mr-2 p-2">
+                      <svg aria-hidden="true" viewBox="0 0 16 16" height="16" width="16" class="octicon octicon-list-unordered">
+                        <path fill-rule="evenodd" d="M2 4a1 1 0 100-2 1 1 0 000 2zm3.75-1.5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zm0 5a.75.75 0 000 1.5h8.5a.75.75 0 000-1.5h-8.5zM3 8a1 1 0 11-2 0 1 1 0 012 0zm-1 6a1 1 0 100-2 1 1 0 000 2z"></path>
+                      </svg>
+                    </summary>
+                    <details-menu class="SelectMenu" id="toc-details" style="display: none;">
+                      <div class="SelectMenu-modal rounded-3 mt-1" style="max-height: 340px;">
+                        <div class="SelectMenu-list SelectMenu-list--borderless p-2" style="overscroll-behavior: contain;" id="toc-list">
+                        </div>
+                      </div>
+                    </details-menu>
+                      373 Words
+                    
+
+                  </div>
+                  <div class="file-actions flex-order-2 pt-0">
+                    
+                    
+                    <a class="muted-link mr-3" href="/tags/%D0%BE%D0%B1%D0%B7%D0%BE%D1%80">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Обзор
+                    </a>
+                    
+                    <a class="muted-link mr-3" href="/tags/%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">
+                      <svg class="octicon octicon-tag" viewBox="0 0 16 16" version="1.1" width="16" height="16">
+                        <path fill-rule="evenodd"
+                          d="M2.5 7.775V2.75a.25.25 0 01.25-.25h5.025a.25.25 0 01.177.073l6.25 6.25a.25.25 0 010 .354l-5.025 5.025a.25.25 0 01-.354 0l-6.25-6.25a.25.25 0 01-.073-.177zm-1.5 0V2.75C1 1.784 1.784 1 2.75 1h5.025c.464 0 .91.184 1.238.513l6.25 6.25a1.75 1.75 0 010 2.474l-5.026 5.026a1.75 1.75 0 01-2.474 0l-6.25-6.25A1.75 1.75 0 011 7.775zM6 5a1 1 0 100 2 1 1 0 000-2z">
+                        </path>
+                      </svg>
+                      Технологии
+                    </a>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="Box-body px-5 pb-5" style="z-index: 1">
+                <article class="markdown-body entry-content container-lg"><p><img src="http://localhost:1313/images/posts/image_66.jpg" alt="Картинка"></p>
+<h1 id="-apidog-аналог-postman-но-лучше">☺️ <a href="https://apidog.com/">Apidog</a>: аналог Postman, но лучше</h1>
+<p><strong>Apidog</strong> — современная платформа для работы с <strong>API</strong>, интегрирующая проектирование, тестирование, документацию и мониторинг в одном удобном интерфейсе. В отличие от традиционных решений, где часто требуются отдельные инструменты для тестирования <strong><strong>(Postman)</strong></strong>, документации <strong><strong>(Swagger)</strong></strong> и автоматизации <strong>(например, <strong>JMeter</strong>)</strong>, <strong>Apidog</strong> сочетает эти возможности в одном продукте, что делает его удобным для командной разработки.</p>
+<h2 id="-что-делает-apidog-удобным-и-полезным">🍎 Что делает Apidog удобным и полезным?</h2>
+<ol>
+<li><strong><strong>Проектирование и документация.</strong></strong> <strong>Apidog</strong> позволяет проектировать <strong>API</strong> с нуля, а также автоматически генерировать документацию. Это упрощает процесс работы с <strong>API</strong>, делая его более прозрачным для всех членов команды. Доступ к документации в реальном времени уменьшает количество ошибок и разночтений, облегчая разработчикам задачу поддержания данных в актуальном состоянии.</li>
+<li><strong><strong>Тестирование и мокирование.</strong></strong> Одной из уникальных функций <strong>Apidog</strong> является возможность создания мок-данных. Это помогает фронтенд-разработчикам тестировать приложение даже в отсутствие реального бэкэнда, моделируя реальное поведение <strong>API</strong>. Такой подход ускоряет разработку и позволяет избежать ошибок на ранних этапах. Помимо этого, в <strong>Apidog</strong> встроены инструменты для автоматического тестирования — можно задать определённые сценарии для проверки данных.</li>
+<li><strong><strong>Поддержка нескольких окружений.</strong></strong> <strong>Apidog</strong> даёт возможность задавать переменные окружения для работы с разными средами разработки, например, для локального тестирования, <strong>staging</strong> и <strong>production</strong>. Это делает переход между окружениями простым и удобным, сводя к минимуму ошибки, которые могут возникнуть при работе с разными конфигурациями <strong>API</strong>.</li>
+<li><strong><strong>Автоматизация и интеграция с CI/CD.</strong></strong> <strong>Apidog</strong> поддерживает автоматизированное тестирование и может интегрироваться с <strong>CI/CD</strong>-пайплайнами, что позволяет запускать тесты и проверки при каждом изменении в коде. Это помогает быстро выявлять проблемы и поддерживать стабильность <strong>API</strong> на всех этапах разработки и развёртывания.</li>
+<li><strong><strong>Визуализация данных и анализ логов.</strong></strong> Платформа предоставляет мощные средства для анализа работы <strong>API</strong>: визуализация логов, статистика и метрики помогают разработчикам отслеживать работу <strong>API</strong>, выявлять узкие места и прогнозировать возможные проблемы.</li>
+</ol>
+<h2 id="-почему-apidog-выделяется">😳 Почему Apidog выделяется?</h2>
+<p><strong>Apidog</strong> — не просто ещё один инструмент для работы с <strong>API</strong>, а полноценная платформа, которая охватывает весь цикл разработки, от проектирования до развертывания и мониторинга. Её преимущества особенно ощутимы в условиях сложных <strong>API</strong>-инфраструктур и микросервисных архитектур, где важно поддерживать согласованность данных между различными компонентами. Интуитивный интерфейс, гибкость настроек и богатый функционал делают <strong>Apidog</strong> удобным как для небольших команд, так и для крупных компаний, стремящихся оптимизировать работу с <strong>API</strong>.</p>
+<p>Таким образом, <strong>Apidog</strong> — это мощное и удобное решение для тех, кто хочет упростить процесс проектирования, тестирования и документации <strong>API</strong> в 2024 году.</p>
+</article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<script type="application/javascript" src='http://localhost:1313/js/toc.js'></script>
+<link rel="stylesheet" href='http://localhost:1313/css/toc.css' />
+
+  
+</div>
+
+  <div class="footer container-xl width-full p-responsive">
+  <div
+    class="position-relative d-flex flex-row-reverse flex-lg-row flex-wrap flex-lg-nowrap flex-justify-center flex-lg-justify-between flex-sm-items-center pt-6 pb-2 mt-6 f6 text-gray border-top border-gray-light ">
+    <a aria-label="Homepage" title="GitHub" class="footer-octicon d-none d-lg-block mr-lg-4" href="http://localhost:1313/">
+      <svg height="24" class="octicon octicon-mark-github" viewBox="0 0 16 16" version="1.1" width="24">
+        <path fill-rule="evenodd"
+          d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
+        </path>
+      </svg>
+    </a>
+    <ul class="list-style-none d-flex flex-wrap col-12 flex-justify-center flex-lg-justify-between mb-2 mb-lg-0">
+      
+      <li class="mr-3 mr-lg-0">Theme by <a href='https://github.com/MeiK2333/github-style'>github-style</a></li>
+      
+      <li class="mr-3 mr-lg-0">GitHub and the Invertocat logo are trademarks of <a href="https://github.com/">GitHub, Inc.</a></li>
+    </ul>
+  </div>
+  <div class="d-flex flex-justify-center pb-6">
+    <span class="f6 text-gray-light"></span>
+  </div>
+
+
+</div>
+
+</body>
+
+<script type="application/javascript" src="http://localhost:1313/js/github-style.js"></script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.min.js"></script>
+<script type="application/javascript" src='http://localhost:1313/js/search.js'></script>
+
+
+
+</html>

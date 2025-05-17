@@ -1,0 +1,78 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-ru'
+title = 'Adaman blog'
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+defaultContentLanguage = 'ru'
+
+[params]
+description = "🦀 Rust  |  🧪 Elixir | 🦫 Go"
+author = "Artyom"
+github = "#CEOCringeINC"
+linkedin = "MeiK2333"
+email = "Adamanq@yandex.ru"
+url = "t.me/behind_the_circus"
+keywords = "blog, google analytics"
+rss = true
+lastmod = true
+favicon = "/images/github-mark.png"
+avatar = "/images/avatar.png"
+headerIcon = "/images/github-mark-white.png"
+location = "Russia"
+userStatusEmoji = "🤡"
+userEmojiDesc = "Цирк уехал, а клоун остался"
+enableGitalk = false
+enableSearch = true
+custom_css = ["/css/custom.css"]
+translationKey = 'about'
+
+[languages]
+[languages.ru]
+contentDir = 'content/russia'
+languageName = 'Russia'
+weight = 10
+[languages.en]
+contentDir = 'content/english'
+languageName = 'English'
+weight = 10
+
+
+[[params.links]]
+title = "Закулисье цирка"
+href = "https://t.me/behind_the_circus"
+icon = "/images/circus.png"
+[[params.links]]
+title = "Мой телеграм"
+href = "https://t.me/Adamanq"
+icon = "/images/adaman.jpg"
+
+[frontmatter]
+lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[params.gitalk]
+clientID = "Your client ID"                                                                 # Your client ID
+clientSecret = "Your client secret"                                                         # Your client secret
+repo = "LuvSia"                                                                             # 您的博客的github地址Repository name，例如：xxxx.github.io
+owner = "ventusoon"                                                                         # 您的GitHub ID
+admin = "ventusoon"                                                                         # 您的GitHub ID
+id = "location.pathname"                                                                    # 文章页面的链接地址就是ID
+labels = "gitalk"                                                                           # Github issue labels. If you used to use Gitment, you can change it
+perPage = 15                                                                                # Pagination size, with maximum 100.
+pagerDirection = "last"                                                                     # Comment sorting direction, available values are 'last' and 'first'.
+createIssueManually = true                                                                  # 设置为true，如果是管理员登录，会自动创建issue，如果是false，需要管理员手动添加第一个评论(issue)
+distractionFreeMode = false                                                                 # Enable hot key (cmd|ctrl + enter) submit comment.
+proxy = "https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token" # 可以自行添加反向代理
+
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[outputFormats.JSON]
+mediaType = "application/json"
+baseName = "index"
+isPlainText = false
+
+
+[services]
+[services.googleAnalytics]
+ID = "UA-123456-789"

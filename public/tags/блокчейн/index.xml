@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Блокчейн on Adaman blog</title>
+    <link>http://localhost:1313/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD/</link>
+    <description>Recent content in Блокчейн on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>ru</language>
+    <lastBuildDate>Fri, 16 May 2025 21:23:01 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%D0%B1%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>⛓️‍💥 Блокчейн: Преимущества и применение в IT</title>
+      <link>http://localhost:1313/post/2024-11-08_09-11-58_msg_67/</link>
+      <pubDate>Fri, 08 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/2024-11-08_09-11-58_msg_67/</guid>
+      <description>Обзор блокчейн технологии, что это и зачем</description>
+    </item>
+  </channel>
+</rss>

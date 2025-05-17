@@ -1,0 +1,319 @@
+<div style="position: relative">
+    <header
+        class="Header js-details-container Details px-3 px-md-4 px-lg-5 flex-wrap flex-md-nowrap open Details--on"
+    >
+        <div
+            class="Header-item mobile-none"
+            style="margin-top: -4px; margin-bottom: -4px"
+        >
+            <a class="Header-link" href="{{ .Site.BaseURL }}">
+                <img
+                    class="octicon"
+                    height="32"
+                    width="32"
+                    src="{{ .Site.Params.headerIcon }}"
+                />
+            </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="Header-item d-md-none">
+            <button
+                class="Header-link btn-link js-details-target"
+                type="button"
+                onclick="document.querySelector('#header-search').style.display = document.querySelector('#header-search').style.display == 'none'? 'block': 'none'"
+            >
+                <svg
+                    height="24"
+                    class="octicon octicon-three-bars"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="24"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Search Container -->
+        <div
+            class="Header-item Header-item--full flex-column flex-md-row width-full flex-order-2 flex-md-order-none mr-0 mr-md-3 mt-3 mt-md-0 Details-content--hidden-not-important d-md-flex"
+        >
+            <div
+                class="Header-search header-search flex-auto js-site-search position-relative flex-self-stretch flex-md-self-auto mb-3 mb-md-0 mr-0 mr-md-3 scoped-search site-scoped-search js-jump-to"
+            >
+                <div class="position-relative">
+                    {{ if .Site.Params.enableSearch }}
+                    <div class="search-container">
+                        <input
+                            type="text"
+                            id="search-input"
+                            class="Header-search-input form-control input-sm header-search-input jump-to-field js-jump-to-field js-site-search-focus"
+                            placeholder="Поиск..."
+                            autocomplete="off"
+                        />
+                        <div id="search-results" class="search-results"></div>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile logo -->
+        <div
+            class="Header-item Header-item--full flex-justify-center d-md-none position-relative"
+        >
+            <a class="Header-link" href="{{ .Site.BaseURL }}">
+                <img
+                    class="octicon octicon-mark-github v-align-middle"
+                    height="32"
+                    width="32"
+                    src="{{ .Site.Params.headerIcon }}"
+                />
+            </a>
+        </div>
+
+        <!-- Language Switcher -->
+        <!-- <div class="Header-item mr-3">
+            {{ if eq .Site.Language.Lang "ru" }}
+            <a class="Header-link active" href="{{ .Site.BaseURL }}">Русский</a>
+            <span class="px-1">|</span>
+            <a class="Header-link" href="/en">English</a>
+            {{ else }}
+            <a class="Header-link" href="/ru">Русский</a>
+            <span class="px-1">|</span>
+            <a class="Header-link active" href="{{ .Site.BaseURL }}">English</a>
+            {{ end }}
+        </div> -->
+
+        <!-- Theme Toggle -->
+        <div class="Header-item" style="margin-right: 0">
+            <a
+                href="javascript:void(0)"
+                class="Header-link no-select"
+                onclick="switchTheme()"
+            >
+                <svg
+                    style="fill: var(--color-profile-color-modes-toggle-moon)"
+                    class="no-select"
+                    viewBox="0 0 16 16"
+                    version="1.1"
+                    width="16"
+                    height="16"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.52208 7.71754C7.5782 7.71754 10.0557 5.24006 10.0557 2.18394C10.0557 1.93498 10.0392 1.68986 10.0074 1.44961C9.95801 1.07727 10.3495 0.771159 10.6474 0.99992C12.1153 2.12716 13.0615 3.89999 13.0615 5.89383C13.0615 9.29958 10.3006 12.0605 6.89485 12.0605C3.95334 12.0605 1.49286 10.001 0.876728 7.24527C0.794841 6.87902 1.23668 6.65289 1.55321 6.85451C2.41106 7.40095 3.4296 7.71754 4.52208 7.71754Z"
+                    ></path>
+                </svg>
+            </a>
+        </div>
+    </header>
+</div>
+
+<style>
+    /* Стили для поиска */
+    .search-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .Header-search-input {
+        width: 100%;
+        padding: 10px 15px;
+        border: 1px solid #e1e4e8;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.2s ease;
+        background-color: var(--color-header-bg);
+        color: var(--color-text-primary);
+    }
+
+    .Header-search-input:focus {
+        outline: none;
+        border-color: #0366d6;
+        box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.3);
+    }
+
+    .search-results {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-bg-primary);
+        border: 1px solid var(--color-border-primary);
+        border-radius: 6px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        z-index: 100;
+        max-height: 70vh;
+        overflow-y: auto;
+        margin-top: 5px;
+    }
+
+    .search-result-item {
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--color-border-secondary);
+        transition: background 0.2s ease;
+    }
+
+    .search-result-item:last-child {
+        border-bottom: none;
+    }
+
+    .search-result-item:hover {
+        background-color: var(--color-bg-tertiary);
+    }
+
+    .search-result-item a {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .search-result-item h4 {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+        color: var(--color-text-primary);
+    }
+
+    .search-result-item p {
+        margin: 0;
+        font-size: 14px;
+        color: var(--color-text-secondary);
+        line-height: 1.4;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .no-results {
+        padding: 12px 16px;
+        color: var(--color-text-secondary);
+        text-align: center;
+    }
+
+    /* Подсветка совпадений */
+    .highlight {
+        background-color: rgba(255, 212, 0, 0.4);
+        font-weight: bold;
+        padding: 0 1px;
+        border-radius: 2px;
+    }
+</style>
+
+<!-- Search Script -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. Проверяем, включён ли поиск на сайте
+        {{ if .Site.Params.enableSearch }}
+        fetch("/index.json")
+            .then((response) => {
+                // 2. Проверяем успешность запроса
+                if (!response.ok) {
+                    throw new Error("Network response was not ok");
+                }
+                return response.json();
+            })
+            .then((data) => {
+                console.log("Search index loaded:", data.length, "items"); // Логирование для отладки
+
+                const options = {
+                    includeScore: true,
+                    keys: [
+                        { name: "title", weight: 0.7 },
+                        { name: "content", weight: 0.3 },
+                        { name: "tags", weight: 0.5 }
+                    ],
+                    threshold: 0.4,
+                    ignoreLocation: true,
+                    includeMatches: true,
+                    minMatchCharLength: 2
+                };
+
+                const fuse = new Fuse(data, options);
+
+                const searchInput = document.getElementById("search-input");
+                const searchResults = document.getElementById("search-results");
+
+                if (searchInput && searchResults) {
+                    searchInput.addEventListener("input", function (e) {
+                        const query = e.target.value.trim();
+
+                        // 3. Очищаем результаты при коротком запросе
+                        if (query.length < 2) {
+                            searchResults.innerHTML = "";
+                            searchResults.style.display = "none";
+                            return;
+                        }
+
+                        try {
+                            const results = fuse.search(query);
+                            console.log("Found results:", results.length); // Логирование для отладки
+
+                            if (results.length > 0) {
+                                searchResults.innerHTML = results
+                                    .slice(0, 8)
+                                    .map((result) => {
+                                        // Функция для безопасного создания HTML
+                                        const escapeHtml = (text) => {
+                                            return text.replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                                        };
+
+                                        const title = escapeHtml(result.item.title);
+                                        const description = result.item.description ? escapeHtml(result.item.description) : '';
+                                        const permalink = escapeHtml(result.item.permalink);
+
+                                        return `
+                                        <div class="search-result-item">
+                                            <a href="${permalink}">
+                                                <h4>${title}</h4>
+                                                ${description ? `<p>${description}</p>` : ''}
+                                            </a>
+                                        </div>
+                                        `;
+                                    })
+                                    .join("");
+                                searchResults.style.display = "block";
+                            } else {
+                                searchResults.innerHTML =
+                                    '<div class="no-results">Ничего не найдено. Попробуйте изменить запрос</div>';
+                                searchResults.style.display = "block";
+                            }
+                        } catch (error) {
+                            console.error("Search error:", error);
+                            searchResults.innerHTML =
+                                '<div class="no-results">Ошибка поиска</div>';
+                            searchResults.style.display = "block";
+                        }
+                    });
+
+                    // Закрываем результаты при клике вне области поиска
+                    document.addEventListener("click", function (e) {
+                        if (!searchContainer.contains(e.target)) {
+                            searchResults.style.display = "none";
+                        }
+                    });
+                } else {
+                    console.error("Search elements not found");
+                }
+            })
+            .catch((error) => {
+                console.error("Error loading search index:", error);
+                // Можно показать сообщение об ошибке в интерфейсе
+                const searchResults = document.getElementById("search-results");
+                if (searchResults) {
+                    searchResults.innerHTML =
+                        '<div class="no-results">Поиск временно недоступен</div>';
+                }
+            });
+        {{ end }}
+    });
+</script>

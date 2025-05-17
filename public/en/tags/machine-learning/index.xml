@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on Adaman blog</title>
+    <link>http://localhost:1313/en/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on Adaman blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 15 May 2025 03:03:27 +0500</lastBuildDate>
+    <atom:link href="http://localhost:1313/en/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elixir for Machine Learning. Part 1 - Theory</title>
+      <link>http://localhost:1313/en/post/ml_for_elixir_1/</link>
+      <pubDate>Wed, 02 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/en/post/ml_for_elixir_1/</guid>
+      <description>&lt;p&gt;In recent times, the role of artificial intelligence in various fields has been gaining momentum. Many companies are already implementing AI to assist users on their portals, while others are developing their own neural networks to solve specialized tasks&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
