@@ -4,6 +4,7 @@ title = 'Adaman blog'
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 defaultContentLanguage = 'ru'
+enableRobotsTXT = true
 
 [params]
 description = "🦀 Rust  |  🧪 Elixir | 🦫 Go"
