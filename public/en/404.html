@@ -12,7 +12,7 @@
     <link rel="stylesheet" href='http://localhost:1313/blog/css/syntax.css' />
     <title>404 Page not found - Adaman blog</title>
     
-    <link rel="icon" type="image/x-icon" href='/images/github-mark.png'>
+    <link rel="icon" type="image/x-icon" href='/blog/images/github-mark.png'>
     
     <meta name="theme-color" content="#1e2327">
 
@@ -76,7 +76,7 @@
                     class="octicon"
                     height="32"
                     width="32"
-                    src="/images/github-mark-white.png"
+                    src="/blog/images/github-mark-white.png"
                 />
             </a>
         </div>
@@ -136,7 +136,7 @@
                     class="octicon octicon-mark-github v-align-middle"
                     height="32"
                     width="32"
-                    src="/images/github-mark-white.png"
+                    src="/blog/images/github-mark-white.png"
                 />
             </a>
         </div>
@@ -269,7 +269,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         
         
-        fetch("/index.json")
+        fetch("/blog/index.json")
             .then((response) => {
                 
                 if (!response.ok) {
@@ -283,14 +283,29 @@
                 const options = {
                     includeScore: true,
                     keys: [
-                        { name: "title", weight: 0.7 },
-                        { name: "content", weight: 0.3 },
-                        { name: "tags", weight: 0.5 }
+                        {
+                            name: "title",
+                            weight: 0.9  
+                        },
+                        {
+                            name: "content",
+                            weight: 0.1  
+                        },
+                        {
+                            name: "tags",
+                            weight: 0.3  
+                        }
                     ],
-                    threshold: 0.4,
-                    ignoreLocation: true,
+                    threshold: 0.3,  
+                    ignoreLocation: false,  
                     includeMatches: true,
-                    minMatchCharLength: 2
+                    minMatchCharLength: 2,
+                    
+                    useExtendedSearch: true,
+                    shouldSort: true,
+                    
+                    findAllMatches: true,
+                    distance: 50  
                 };
 
                 const fuse = new Fuse(data, options);

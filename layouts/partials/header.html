@@ -214,7 +214,7 @@
     document.addEventListener("DOMContentLoaded", function () {
         // 1. Проверяем, включён ли поиск на сайте
         {{ if .Site.Params.enableSearch }}
-        fetch("/index.json")
+        fetch("/blog/index.json")
             .then((response) => {
                 // 2. Проверяем успешность запроса
                 if (!response.ok) {
@@ -228,14 +228,29 @@
                 const options = {
                     includeScore: true,
                     keys: [
-                        { name: "title", weight: 0.7 },
-                        { name: "content", weight: 0.3 },
-                        { name: "tags", weight: 0.5 }
+                        {
+                            name: "title",
+                            weight: 0.9  // Увеличиваем вес для title (было 0.7)
+                        },
+                        {
+                            name: "content",
+                            weight: 0.1  // Уменьшаем вес для content (было 0.3)
+                        },
+                        {
+                            name: "tags",
+                            weight: 0.3  // Оставляем tags с небольшим весом
+                        }
                     ],
-                    threshold: 0.4,
-                    ignoreLocation: true,
+                    threshold: 0.3,  // Уменьшаем порог для более точного поиска (было 0.4)
+                    ignoreLocation: false,  // Теперь учитываем позицию совпадения (для точности)
                     includeMatches: true,
-                    minMatchCharLength: 2
+                    minMatchCharLength: 2,
+                    // Добавляем точный поиск по словам
+                    useExtendedSearch: true,
+                    shouldSort: true,
+                    // Улучшаем алгоритм поиска
+                    findAllMatches: true,
+                    distance: 50  // Максимальное расстояние между символами для совпадения
                 };
 
                 const fuse = new Fuse(data, options);

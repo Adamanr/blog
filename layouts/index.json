@@ -1,16 +1,15 @@
 {{- $.Scratch.Add "index" slice -}}
 {{- range .Site.RegularPages -}}
-    {{- $content := .Plain | htmlUnescape -}}
-    {{- $title := .Title | htmlUnescape -}}
-    {{- $description := .Description | htmlUnescape -}}
-    {{- $.Scratch.Add "index" (dict 
-        "title" $title 
-        "content" $content 
-        "description" $description 
-        "permalink" .Permalink 
-        "tags" .Params.tags
-        "lang" .Language.Lang
-    ) -}}
+  {{- $content := .Plain | htmlUnescape -}}
+  {{- $title := .Title | htmlUnescape -}}
+  {{- $description := .Description | htmlUnescape -}}
+  {{- $.Scratch.Add "index" (dict
+    "title" $title
+    "content" $content
+    "description" $description
+    "permalink" .Permalink
+    "tags" .Params.tags
+    "lang" .Language.Lang
+  ) -}}
 {{- end -}}
 {{- $.Scratch.Get "index" | jsonify -}}
-
