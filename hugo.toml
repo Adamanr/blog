@@ -46,6 +46,10 @@ icon = "/blog/images/circus.png"
 title = "Мой телеграм"
 href = "https://t.me/Adamanq"
 icon = "/blog/images/adaman.jpg"
+[[params.links]]
+title = "dev.to"
+href = "https://dev.to/adamanq"
+icon = "/blog/images/devto.webp"
 
 [frontmatter]
 lastmod = ["lastmod", ":fileModTime", ":default"]
